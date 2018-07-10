@@ -51,9 +51,9 @@ The language server provides some basic validations:
 - Field name should be unique inside an entity
 
 ## Getting Started
-Run `./gradlew` to execute the **generateXtext** default task which generates all Xtext artifacts
+Run `./gradlew generateXtext` to generates all Xtext artifacts.
 
-Run `./gradlew shadowJar` in order to package the **Language Server** into a `jar`
+Run `./gradlew shadowJar` in order to package the **Language Server** into a `jar` in mx.infotec.dads.kukulkan.parent/mx.infotec.dads.kukulkan.ide/build/libs
 
 ## Usage
 Import this project into Eclipse IDE. You may want to install the [Eclipse Xtext plugin](https://marketplace.eclipse.org/content/eclipse-xtext) for a better experience.
