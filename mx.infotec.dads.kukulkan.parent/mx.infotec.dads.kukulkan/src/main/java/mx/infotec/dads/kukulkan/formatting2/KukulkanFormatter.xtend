@@ -4,10 +4,10 @@
 package mx.infotec.dads.kukulkan.formatting2
 
 import com.google.inject.Inject
-import mx.infotec.dads.kukulkan.kukulkan.domainModel
-import mx.infotec.dads.kukulkan.kukulkan.entity
-import mx.infotec.dads.kukulkan.kukulkan.entityField
-import mx.infotec.dads.kukulkan.kukulkan.primitiveField
+import mx.infotec.dads.kukulkan.kukulkan.DomainModel
+import mx.infotec.dads.kukulkan.kukulkan.Entity
+import mx.infotec.dads.kukulkan.kukulkan.EntityField
+import mx.infotec.dads.kukulkan.kukulkan.PrimitiveField
 import mx.infotec.dads.kukulkan.services.KukulkanGrammarAccess
 import org.eclipse.xtext.formatting.IIndentationInformation
 import org.eclipse.xtext.formatting2.AbstractFormatter2
@@ -31,15 +31,15 @@ class KukulkanFormatter extends AbstractFormatter2 {
 		super.initialize(request);
 	}
 
-	def dispatch void format(domainModel domainModel, extension IFormattableDocument document) {
+	def dispatch void format(DomainModel domainModel, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
 		println(textRegionAccess.toString())
-		for (entity entity : domainModel.getEntities()) {
+		for (Entity entity : domainModel.getEntities()) {
 			entity.format;
 		}
 	}
 
-	def dispatch void format(entity entity, extension IFormattableDocument document) {
+	def dispatch void format(Entity entity, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
 		entity.regionFor.ruleCall(entityAccess.LBRACETerminalRuleCall_3_0).prepend[oneSpace]
 		entity.regionFor.ruleCall(entityAccess.RBRACETerminalRuleCall_3_2).prepend[newLine]
@@ -48,12 +48,12 @@ class KukulkanFormatter extends AbstractFormatter2 {
 			entity.regionFor.ruleCall(entityAccess.RBRACETerminalRuleCall_3_2)
 		)[indent]
 		
-		for (entityField entityField : entity.getFields()) {
+		for (EntityField entityField : entity.getFields()) {
 			entityField.format;
 		}
 	}
 
-	def dispatch void format(primitiveField primitiveField, extension IFormattableDocument document) {
+	def dispatch void format(PrimitiveField primitiveField, extension IFormattableDocument document) {
 		primitiveField.regionFor.ruleCall(primitiveFieldAccess.SEMICOLONTerminalRuleCall_1).surround[oneSpace]
 		primitiveField.prepend[newLine]
 	}

@@ -1,5 +1,5 @@
 plugins {
-	id 'com.github.johnrengelman.shadow' version '2.0.0'
+	//id 'com.github.johnrengelman.shadow' version '2.0.0'
 }
 
 dependencies {
@@ -9,9 +9,10 @@ dependencies {
 }
 
 apply plugin: 'application'
-apply plugin: 'com.github.johnrengelman.shadow'
+//apply plugin: 'com.github.johnrengelman.shadow'
 mainClassName = "org.eclipse.xtext.ide.server.ServerLauncher"
 
+/*
 shadowJar {
 	from(project.convention.getPlugin(JavaPluginConvention).sourceSets.main.output)
 	configurations = [project.configurations.runtime]
@@ -20,4 +21,13 @@ shadowJar {
 		'plugin.xml', 'modeling32.png', 'systembundle.properties', 'profile.list')
 	classifier = 'ls'
 	append('plugin.properties')
-}
+}*/
+
+install {
+		repositories.mavenInstaller {
+			pom {
+				groupId = "mx.infotec.dads.kukulkan.dsl"
+				artifactId = 'kukulkan-dsl-ide'
+			}
+    	}
+	}

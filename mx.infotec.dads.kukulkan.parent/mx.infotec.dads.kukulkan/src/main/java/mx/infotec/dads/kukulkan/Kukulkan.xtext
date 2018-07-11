@@ -6,82 +6,82 @@ generate kukulkan "http://www.infotec.mx/dads/kukulkan/Kukulkan"
 /**
  * Domain Model Rule
  */
-domainModel:
-	entities+=entity+;
+DomainModel:
+	entities+=Entity+;
 
 	/** 
  * Entity Rule
  *  
  */
-entity:
+Entity:
 	ENTITY_KEYWORD name=ID
 	(LPAREN tableName=ID RPAREN)?
 	(LBRACE
-	(fields+=entityField
-	(COMMA fields+=entityField)*)? RBRACE)?;
+	(fields+=EntityField
+	(COMMA fields+=EntityField)*)? RBRACE)?;
 
 	/** 
  * Entity Field Rule
  *  
  */
-entityField:
-	primitiveField
-	| associationField
-	| coreEntityAssociationField;
+EntityField:
+	PrimitiveField
+	| AssociationField
+	| CoreEntityAssociationField;
 
-primitiveField:
-	id=ID SEMICOLON type=fieldType;
+PrimitiveField:
+	id=ID SEMICOLON type=FieldType;
 	/** 
  * Field Type Rule
  *  
  */
-fieldType:
-	stringFieldType
-	| numericFieldType
-	| booleanFieldType
-	| dateFieldType
-	| blobFieldType;
+FieldType:
+	StringFieldType
+	| NumericFieldType
+	| BooleanFieldType
+	| DateFieldType
+	| BlobFieldType;
 
 	/** 
  * Entity Type Rule
  *  
  */
-associationField:
-	type=cardinality (LPAREN toSourcePropertyName=ID RPAREN)? id=ID SEMICOLON targetEntity=[entity];
+AssociationField:
+	type=Cardinality (LPAREN toSourcePropertyName=ID RPAREN)? id=ID SEMICOLON targetEntity=[Entity];
 
 	/** 
  * Core Entity Association Rule
  *  
  */
-coreEntityAssociationField:
-	type=userCardinality id=ID SEMICOLON targetEntity=coreEntity;
+CoreEntityAssociationField:
+	type=UserCardinality id=ID SEMICOLON targetEntity=CoreEntity;
 
 	/** 
  * String Field Type Rule
  *  
  */
-stringFieldType:
-	name=stringType constraints+=stringValidators*;
+StringFieldType:
+	name=StringType constraints+=StringValidators*;
 
 	/** 
  * String Type Rule
  *  
  */
-stringType:
+StringType:
 	STRING_KEYWORD;
 
 	/** 
  * Numeric Field Type Rule
  *  
  */
-numericFieldType:
-	name=numericTypes constraints+=numericValidators*;
+NumericFieldType:
+	name=NumericTypes constraints+=NumericValidators*;
 
 	/** 
  * Numeric Types Rule
  *  
  */
-numericTypes:
+NumericTypes:
 	INTEGER
 	| LONG
 	| BIG_DECIMAL
@@ -92,21 +92,21 @@ numericTypes:
  * Boolean Field Type Token
  *  
  */
-booleanFieldType:
-	name=BOOLEAN_TYPE required=requiredValidator?;
+BooleanFieldType:
+	name=BOOLEAN_TYPE required=RequiredValidator?;
 
 	/** 
  * Date Field Type Rule
  *  
  */
-dateFieldType:
-	type=dateTypes required=requiredValidator?;
+DateFieldType:
+	type=DateTypes required=RequiredValidator?;
 
 	/** 
  * Date Types Rule
  *  
  */
-dateTypes:
+DateTypes:
 	LOCAL_DATE
 	| ZONED_DATETIME
 	| INSTANT;
@@ -115,14 +115,14 @@ dateTypes:
  * Blob Field Type Rule
  *  
  */
-blobFieldType:
-	name=blobTypes constraints+=blobValidators*;
+BlobFieldType:
+	name=BlobTypes constraints+=BlobValidators*;
 
 	/** 
  * Blob Types Rule
  *  
  */
-blobTypes:
+BlobTypes:
 	BLOB
 	| ANY_BLOB
 	| IMAGE_BLOB
@@ -131,44 +131,44 @@ blobTypes:
 	/* =========================================================================
  * VALIDATOR
  * ========================================================================= */
-stringValidators:
-	required=requiredValidator
-	| minLenght=minValidator
-	| maxLenght=maxValidator
-	| pattern=patternValidator;
+StringValidators:
+	required=RequiredValidator
+	| minLenght=MinValidator
+	| maxLenght=MaxValidator
+	| pattern=PatternValidator;
 
-numericValidators:
-	required=requiredValidator
-	| minValue=minValidator
-	| maxValue=maxValidator;
+NumericValidators:
+	required=RequiredValidator
+	| minValue=MinValidator
+	| maxValue=MaxValidator;
 
-blobValidators:
-	required=requiredValidator
-	| minBytesValue=minValidator
-	| maxBytesValue=maxValidator;
+BlobValidators:
+	required=RequiredValidator
+	| minBytesValue=MinValidator
+	| maxBytesValue=MaxValidator;
 
-requiredValidator:
+RequiredValidator:
 	REQUIRED;
 
-patternValidator:
+PatternValidator:
 	PATTERN LPAREN PATTERN_VALUE RPAREN;
 
-minValidator:
+MinValidator:
 	MIN LPAREN INT RPAREN;
 
-maxValidator:
+MaxValidator:
 	MAX LPAREN INT RPAREN;
 
-coreEntity:
+CoreEntity:
 	CORE_USER;
 
-cardinality:
+Cardinality:
 	ONE_TO_MANY
 	| MANY_TO_ONE
 	| ONE_TO_ONE
 	| MANY_TO_MANY;
 
-userCardinality:
+UserCardinality:
 	MANY_TO_ONE
 	| ONE_TO_ONE
 	| MANY_TO_MANY;
