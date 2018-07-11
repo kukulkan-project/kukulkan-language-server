@@ -34,10 +34,10 @@ clean.dependsOn(cleanGenerateXtextLanguage)
 eclipse.classpath.plusConfigurations += [configurations.mwe2]
 
 install {
-		repositories.mavenInstaller {
-			pom {
-				groupId = "mx.infotec.dads.kukulkan.dsl"
-				artifactId = 'kukulkan-grammar'
-			}
-    	}
-	}
+	repositories.mavenInstaller {
+		pom {
+			groupId = "mx.infotec.dads.kukulkan.dsl"
+			artifactId = 'kukulkan-grammar'
+		}
+    }
+}

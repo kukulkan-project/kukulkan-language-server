@@ -30,8 +30,12 @@ EntityField:
 	| CoreEntityAssociationField;
 
 PrimitiveField:
-	id=ID SEMICOLON type=FieldType;
-	/** 
+	(markers = primitiveFieldMarkers)? id=ID SEMICOLON type=FieldType;
+	
+primitiveFieldMarkers:
+	DISPLAY_FIELD_MARKER
+;
+/** 
  * Field Type Rule
  *  
  */
@@ -176,6 +180,9 @@ UserCardinality:
 	//Terminals
 terminal ENTITY_KEYWORD:
 	'entity';
+
+terminal DISPLAY_FIELD_MARKER:
+	'->';
 
 terminal STRING_KEYWORD:
 	'String';

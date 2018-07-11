@@ -54,7 +54,7 @@ class KukulkanFormatter extends AbstractFormatter2 {
 	}
 
 	def dispatch void format(PrimitiveField primitiveField, extension IFormattableDocument document) {
-		primitiveField.regionFor.ruleCall(primitiveFieldAccess.SEMICOLONTerminalRuleCall_1).surround[oneSpace]
+		//primitiveField.regionFor.ruleCall(primitiveFieldAccess.SEMICOLONTerminalRuleCall_1).surround[oneSpace]
 		primitiveField.prepend[newLine]
 	}
 

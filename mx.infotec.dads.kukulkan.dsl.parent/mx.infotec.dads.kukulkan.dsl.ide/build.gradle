@@ -24,10 +24,10 @@ shadowJar {
 }*/
 
 install {
-		repositories.mavenInstaller {
-			pom {
-				groupId = "mx.infotec.dads.kukulkan.dsl"
-				artifactId = 'kukulkan-dsl-ide'
-			}
-    	}
-	}
+	repositories.mavenInstaller {
+		pom {
+			groupId = "mx.infotec.dads.kukulkan.dsl"
+			artifactId = 'kukulkan-dsl-ide'
+		}
+    }
+}
