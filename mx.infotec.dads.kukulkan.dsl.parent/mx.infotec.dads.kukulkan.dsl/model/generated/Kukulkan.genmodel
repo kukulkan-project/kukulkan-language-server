@@ -5,7 +5,7 @@
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.12">
   <genPackages prefix="Kukulkan" basePackage="mx.infotec.dads.kukulkan.dsl" disposableProviderFactory="true"
-      fileExtensions="3k" ecorePackage="Kukulkan.ecore#/">
+      fileExtensions="3k,kukulkan" ecorePackage="Kukulkan.ecore#/">
     <genClasses ecoreClass="Kukulkan.ecore#//DomainModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//DomainModel/entities"/>
     </genClasses>

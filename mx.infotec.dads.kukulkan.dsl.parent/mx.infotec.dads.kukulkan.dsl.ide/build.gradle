@@ -21,13 +21,14 @@ shadowJar {
 		'plugin.xml', 'modeling32.png', 'systembundle.properties', 'profile.list')
 	classifier = 'ls'
 	append('plugin.properties')
-}*/
+}
+*/
 
 install {
 	repositories.mavenInstaller {
 		pom {
 			groupId = "mx.infotec.dads.kukulkan.dsl"
-			artifactId = 'kukulkan-dsl-ide'
+			artifactId = 'kukulkan-language-server'
 		}
     }
 }

@@ -3,7 +3,6 @@
  */
 package mx.infotec.dads.kukulkan.dsl
 
-
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */

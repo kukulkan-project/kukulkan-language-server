@@ -22,7 +22,7 @@ subprojects {
 	apply plugin: 'maven'
 	
 	group = 'mx.infotec.dads.kukulkan.dsl'
-	version = '0.1.0'
+	version = '0.1.0-SNAPSHOT'
 	
 	sourceCompatibility = '1.8'
 	targetCompatibility = '1.8'
@@ -30,5 +30,4 @@ subprojects {
 	configurations.all {
 		exclude group: 'asm'
 	}
-	
 }

@@ -6,7 +6,7 @@ import org.eclipse.xtext.xtext.generator.model.project.*
 var rootPath = ".."
 
 Workflow {
-
+	
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
@@ -28,16 +28,18 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "mx.infotec.dads.kukulkan.dsl.Kukulkan"
-			fileExtensions = "3k"
+			fileExtensions = "3k,kukulkan"
+
 			serializer = {
 				generateStub = false
 			}
 			validator = {
-			// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 			}
+			/*
 			formatter = formatting.Formatter2Fragment2 auto-inject{
 				generateStub = true
-			}
+			}*/
 		}
 	}
 }

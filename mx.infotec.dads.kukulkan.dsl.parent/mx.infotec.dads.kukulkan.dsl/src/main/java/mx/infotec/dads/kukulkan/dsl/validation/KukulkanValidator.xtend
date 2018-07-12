@@ -3,10 +3,10 @@
  */
 package mx.infotec.dads.kukulkan.dsl.validation
 
-import mx.infotec.dads.kukulkan.dsl.kukulkan.KukulkanPackage
-import mx.infotec.dads.kukulkan.dsl.kukulkan.Entity
 import mx.infotec.dads.kukulkan.dsl.kukulkan.DomainModel
+import mx.infotec.dads.kukulkan.dsl.kukulkan.Entity
 import mx.infotec.dads.kukulkan.dsl.kukulkan.EntityField
+import mx.infotec.dads.kukulkan.dsl.kukulkan.KukulkanPackage
 import org.eclipse.xtext.validation.Check
 
 /**
