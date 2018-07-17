@@ -9,7 +9,7 @@ generate kukulkan "http://www.infotec.mx/dads/kukulkan/dsl/Kukulkan"
 DomainModel:
 	entities+=Entity+;
 
-//Entity Rule
+	//Entity Rule
 Entity:
 	ENTITY_KEYWORD name=ID
 	(LPAREN tableName=ID RPAREN)?
@@ -17,7 +17,7 @@ Entity:
 	(fields+=EntityField
 	(COMMA fields+=EntityField)*)? RBRACE)?;
 
-//Entity Field Rule
+	//Entity Field Rule
 EntityField:
 	PrimitiveField
 	| AssociationField
@@ -29,7 +29,7 @@ PrimitiveField:
 primitiveFieldMarkers:
 	DISPLAY_FIELD_MARKER;
 
-//Field Type Rule
+	//Field Type Rule
 FieldType:
 	StringFieldType
 	| NumericFieldType
@@ -37,27 +37,27 @@ FieldType:
 	| DateFieldType
 	| BlobFieldType;
 
-//Entity Type Rule
+	//Entity Type Rule
 AssociationField:
 	type=Cardinality (LPAREN toSourcePropertyName=ID RPAREN)? id=ID SEMICOLON targetEntity=[Entity];
 
-//Core Entity Association Rule
+	//Core Entity Association Rule
 CoreEntityAssociationField:
 	type=UserCardinality id=ID SEMICOLON targetEntity=CoreEntity;
 
-//String Field Type Rule
+	//String Field Type Rule
 StringFieldType:
 	name=StringType constraints+=StringValidators*;
 
-//String Type Rule
+	//String Type Rule
 StringType:
 	STRING_KEYWORD;
 
-//Numeric Field Type Rule
+	//Numeric Field Type Rule
 NumericFieldType:
 	name=NumericTypes constraints+=NumericValidators*;
 
-//Numeric Types Rule
+	//Numeric Types Rule
 NumericTypes:
 	INTEGER
 	| LONG
@@ -65,32 +65,32 @@ NumericTypes:
 	| FLOAT
 	| DOUBLE;
 
-//Boolean Field Type Token
+	//Boolean Field Type Token
 BooleanFieldType:
 	name=BOOLEAN_TYPE required=RequiredValidator?;
 
-//Date Field Type Rule
+	//Date Field Type Rule
 DateFieldType:
 	type=DateTypes required=RequiredValidator?;
 
-//Date Types Rule
+	//Date Types Rule
 DateTypes:
 	LOCAL_DATE
 	| ZONED_DATETIME
 	| INSTANT;
 
-//Blob Field Type Rule
+	//Blob Field Type Rule
 BlobFieldType:
 	name=BlobTypes constraints+=BlobValidators*;
 
-//Blob Types Rule
+	//Blob Types Rule
 BlobTypes:
 	BLOB
 	| ANY_BLOB
 	| IMAGE_BLOB
 	| TEXT_BLOB;
 
-/* =========================================================================
+	/* =========================================================================
  * VALIDATOR
  * ========================================================================= 
  */
@@ -114,13 +114,13 @@ RequiredValidator:
 	REQUIRED;
 
 PatternValidator:
-	PATTERN LPAREN PATTERN_VALUE RPAREN;
+	PATTERN LPAREN pattern=PATTERN_VALUE RPAREN;
 
 MinValidator:
-	MIN LPAREN INT RPAREN;
+	MIN LPAREN value=INT RPAREN;
 
 MaxValidator:
-	MAX LPAREN INT RPAREN;
+	MAX LPAREN value=INT RPAREN;
 
 CoreEntity:
 	CORE_USER;
@@ -136,7 +136,7 @@ UserCardinality:
 	| ONE_TO_ONE
 	| MANY_TO_MANY;
 
-//Terminals
+	//Terminals
 terminal ENTITY_KEYWORD:
 	'entity';
 
@@ -146,55 +146,55 @@ terminal DISPLAY_FIELD_MARKER:
 terminal STRING_KEYWORD:
 	'String';
 
-//INTEGER Token
+	//INTEGER Token
 terminal INTEGER:
 	'Integer';
 
-//LONG Token
+	//LONG Token
 terminal LONG:
 	'Long';
 
-//BIG_DECIMAL Token
+	//BIG_DECIMAL Token
 terminal BIG_DECIMAL:
 	'BigDecimal';
 
-//FLOAT Token
+	//FLOAT Token
 terminal FLOAT:
 	'Float';
 
-//DOUBLE Token
+	//DOUBLE Token
 terminal DOUBLE:
 	'Double';
 
-//BOOLEAN_TYPE Token
+	//BOOLEAN_TYPE Token
 terminal BOOLEAN_TYPE:
 	'Boolean';
 
-//LOCAL_DATE Token
+	//LOCAL_DATE Token
 terminal LOCAL_DATE:
 	'LocalDate';
 
-//ZONED_DATETIME Token
+	//ZONED_DATETIME Token
 terminal ZONED_DATETIME:
 	'ZonedDateTime';
 
-//INSTANT Token
+	//INSTANT Token
 terminal INSTANT:
 	'Instant';
 
-//BLOB Token
+	//BLOB Token
 terminal BLOB:
 	'Blob';
 
-//ANY_BLOB Token
+	//ANY_BLOB Token
 terminal ANY_BLOB:
 	'AnyBlob';
 
-//IMAGE_BLOB Token
+	//IMAGE_BLOB Token
 terminal IMAGE_BLOB:
 	'ImageBlob';
 
-//TEXT_BLOB Token
+	//TEXT_BLOB Token
 terminal TEXT_BLOB:
 	'TextBlob';
 

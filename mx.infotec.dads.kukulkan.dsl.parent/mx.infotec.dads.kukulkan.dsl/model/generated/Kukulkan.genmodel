@@ -53,19 +53,28 @@
     </genClasses>
     <genClasses ecoreClass="Kukulkan.ecore#//StringValidators">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//StringValidators/required"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//StringValidators/minLenght"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//StringValidators/maxLenght"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//StringValidators/pattern"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//StringValidators/minLenght"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//StringValidators/maxLenght"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//StringValidators/pattern"/>
     </genClasses>
     <genClasses ecoreClass="Kukulkan.ecore#//NumericValidators">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//NumericValidators/required"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//NumericValidators/minValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//NumericValidators/maxValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//NumericValidators/minValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//NumericValidators/maxValue"/>
     </genClasses>
     <genClasses ecoreClass="Kukulkan.ecore#//BlobValidators">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//BlobValidators/required"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//BlobValidators/minBytesValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//BlobValidators/maxBytesValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//BlobValidators/minBytesValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//BlobValidators/maxBytesValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Kukulkan.ecore#//PatternValidator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//PatternValidator/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="Kukulkan.ecore#//MinValidator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//MinValidator/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Kukulkan.ecore#//MaxValidator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//MaxValidator/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
