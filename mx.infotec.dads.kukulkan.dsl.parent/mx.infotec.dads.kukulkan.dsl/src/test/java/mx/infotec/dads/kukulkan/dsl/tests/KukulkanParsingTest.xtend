@@ -43,23 +43,7 @@ class KukulkanParsingTest {
 			}
 		''')
 		val entity = model.entities.head
-		Assert.assertSame(entity.name, entity.name)
-	}
-
-	@Test
-	def void parseLowerCaseEntity() {
-		val model = parseHelper.parse('''
-			entity Persona(usuarios) {
-				id: String
-			}
-			entity Student {
-				id: String
-			}
-			entity Teacher(maestros) {
-				id: String
-			}
-		''')
-		println(validationTestHelper.validate(model))
-		Assert.assertSame(true, true);
+		println(validationTestHelper.validate(model));
+		Assert.assertEquals(entity.name, 'Persona')
 	}
 }
