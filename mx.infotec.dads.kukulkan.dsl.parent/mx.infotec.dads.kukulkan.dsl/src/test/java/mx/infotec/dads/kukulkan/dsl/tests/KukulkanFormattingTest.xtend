@@ -50,13 +50,15 @@ class KukulkanFormattingTest {
 		assertFormattedWithoutSerialization[
 			expectation = '''
 entity Persona {
-	nombre : String
+	nombre : String,
+	OneToOne alumno : Alumno,
+	OneToOne usuario : CoreUser
 }
 entity Alumno {
 }
 '''
 			toBeFormatted = '''
-entity Persona{nombre:String}
+entity Persona{nombre:String,OneToOne alumno:Alumno,OneToOne usuario:CoreUser}
 entity Alumno{
 	
 }

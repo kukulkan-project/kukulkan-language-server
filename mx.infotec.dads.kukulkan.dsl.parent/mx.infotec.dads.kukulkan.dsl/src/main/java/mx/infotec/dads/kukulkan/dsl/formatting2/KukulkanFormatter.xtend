@@ -14,6 +14,9 @@ import org.eclipse.xtext.formatting2.FormatterRequest
 import org.eclipse.xtext.preferences.MapBasedPreferenceValues
 import org.eclipse.xtext.formatting2.FormatterPreferenceKeys
 import mx.infotec.dads.kukulkan.dsl.kukulkan.PrimitiveField
+import mx.infotec.dads.kukulkan.dsl.kukulkan.AssociationField
+import mx.infotec.dads.kukulkan.dsl.kukulkan.EntityField
+import mx.infotec.dads.kukulkan.dsl.kukulkan.CoreEntityAssociationField
 
 class KukulkanFormatter extends AbstractFormatter2 {
 
@@ -48,8 +51,20 @@ class KukulkanFormatter extends AbstractFormatter2 {
 	}
 
 	def dispatch void format(PrimitiveField primitiveField, extension IFormattableDocument document) {
-		primitiveField.regionFor.ruleCall(primitiveFieldAccess.SEMICOLONTerminalRuleCall_2).surround[oneSpace]
 		primitiveField.prepend[newLine]
+		primitiveField.regionFor.ruleCall(primitiveFieldAccess.SEMICOLONTerminalRuleCall_2).surround[oneSpace]
+	}
+
+	def dispatch void format(AssociationField associationField, extension IFormattableDocument document) {
+		associationField.prepend[newLine]
+		associationField.regionFor.ruleCall(associationFieldAccess.SEMICOLONTerminalRuleCall_3).surround[oneSpace]
+	}
+
+	def dispatch void format(CoreEntityAssociationField coreEntityAssociationField,
+		extension IFormattableDocument document) {
+		coreEntityAssociationField.prepend[newLine]
+		coreEntityAssociationField.regionFor.ruleCall(coreEntityAssociationFieldAccess.SEMICOLONTerminalRuleCall_2).
+			surround[oneSpace]
 	}
 
 // TODO: implement for StringFieldType, NumericFieldType, BlobFieldType, StringValidators, NumericValidators, BlobValidators
