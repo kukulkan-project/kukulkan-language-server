@@ -3,9 +3,21 @@
  */
 package mx.infotec.dads.kukulkan.dsl.ide
 
+import org.eclipse.xtext.ide.editor.contentassist.IdeContentProposalProvider
+import mx.infotec.dads.kukulkan.dsl.ide.contentassist.KukulkanContentProposalProvider
+import org.eclipse.xtext.ide.editor.contentassist.AbstractIdeTemplateProposalProvider
+import mx.infotec.dads.kukulkan.dsl.ide.contentassist.KukulkanTemplateProposalProvider
 
 /**
  * Use this class to register ide components.
  */
 class KukulkanIdeModule extends AbstractKukulkanIdeModule {
+
+	def Class<? extends IdeContentProposalProvider> bindIdeContentProposalProvider() {
+		return KukulkanContentProposalProvider
+	}
+
+	def Class<? extends AbstractIdeTemplateProposalProvider> bindIdeTemplateProposalProvider() {
+		return KukulkanTemplateProposalProvider
+	}
 }

@@ -40,6 +40,8 @@ Workflow {
 			formatter = formatting.Formatter2Fragment2 auto-inject{
 				generateStub = true
 			}
+			contentAssist =  ui.contentAssist.ContentAssistFragment2 auto-inject{
+			}
 		}
 	}
 }
