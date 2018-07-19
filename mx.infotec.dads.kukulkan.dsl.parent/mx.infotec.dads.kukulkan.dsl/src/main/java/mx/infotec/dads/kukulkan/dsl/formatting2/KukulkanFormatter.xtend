@@ -4,19 +4,18 @@
 package mx.infotec.dads.kukulkan.dsl.formatting2
 
 import com.google.inject.Inject
+import mx.infotec.dads.kukulkan.dsl.kukulkan.AssociationField
+import mx.infotec.dads.kukulkan.dsl.kukulkan.CoreEntityAssociationField
 import mx.infotec.dads.kukulkan.dsl.kukulkan.DomainModel
 import mx.infotec.dads.kukulkan.dsl.kukulkan.Entity
-import mx.infotec.dads.kukulkan.dsl.services.KukulkanGrammarAccess
-import org.eclipse.xtext.formatting2.AbstractFormatter2
-import org.eclipse.xtext.formatting2.IFormattableDocument
-import org.eclipse.xtext.formatting.IIndentationInformation
-import org.eclipse.xtext.formatting2.FormatterRequest
-import org.eclipse.xtext.preferences.MapBasedPreferenceValues
-import org.eclipse.xtext.formatting2.FormatterPreferenceKeys
 import mx.infotec.dads.kukulkan.dsl.kukulkan.PrimitiveField
-import mx.infotec.dads.kukulkan.dsl.kukulkan.AssociationField
-import mx.infotec.dads.kukulkan.dsl.kukulkan.EntityField
-import mx.infotec.dads.kukulkan.dsl.kukulkan.CoreEntityAssociationField
+import mx.infotec.dads.kukulkan.dsl.services.KukulkanGrammarAccess
+import org.eclipse.xtext.formatting.IIndentationInformation
+import org.eclipse.xtext.formatting2.AbstractFormatter2
+import org.eclipse.xtext.formatting2.FormatterPreferenceKeys
+import org.eclipse.xtext.formatting2.FormatterRequest
+import org.eclipse.xtext.formatting2.IFormattableDocument
+import org.eclipse.xtext.preferences.MapBasedPreferenceValues
 
 class KukulkanFormatter extends AbstractFormatter2 {
 

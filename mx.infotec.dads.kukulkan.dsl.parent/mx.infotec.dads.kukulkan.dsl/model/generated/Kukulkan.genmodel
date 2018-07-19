@@ -18,7 +18,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//EntityField/id"/>
     </genClasses>
     <genClasses ecoreClass="Kukulkan.ecore#//PrimitiveField">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//PrimitiveField/markers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//PrimitiveField/displayFieldMarker"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//PrimitiveField/type"/>
     </genClasses>
     <genClasses ecoreClass="Kukulkan.ecore#//FieldType"/>
