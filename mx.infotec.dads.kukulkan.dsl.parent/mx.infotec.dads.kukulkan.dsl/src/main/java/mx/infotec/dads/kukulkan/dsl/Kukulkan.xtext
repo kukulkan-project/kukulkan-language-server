@@ -45,7 +45,8 @@ CoreEntityAssociationField:
 
 ViewSection:
 	VIEWS_SECTION LBRACE
-	(viewDeclarations+=ViewDeclaration)?
+	(viewDeclarations+=ViewDeclaration
+	(COMMA viewDeclarations+=ViewDeclaration)*)?
 	RBRACE;
 
 ViewDeclaration:
