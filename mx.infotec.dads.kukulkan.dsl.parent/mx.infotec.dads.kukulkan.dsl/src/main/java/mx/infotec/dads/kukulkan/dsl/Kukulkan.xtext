@@ -7,7 +7,8 @@ generate kukulkan "http://www.infotec.mx/dads/kukulkan/dsl/Kukulkan"
  * Domain Model Rule
  */
 DomainModel:
-	entities+=Entity+;
+	entities+=Entity+
+	(viewSection=ViewSection)?;
 
 	//Entity Rule
 Entity:
@@ -42,6 +43,17 @@ AssociationField:
 CoreEntityAssociationField:
 	type=UserCardinality id=ID SEMICOLON targetEntity=CoreEntity;
 
+ViewSection:
+	VIEWS_SECTION LBRACE
+	(viewDeclarations+=ViewDeclaration)?
+	RBRACE;
+
+ViewDeclaration:
+	entity=[Entity] AS viewType=ViewType;
+
+ViewType:
+	SHEET | PAGE;
+
 	//String Field Type Rule
 StringFieldType:
 	name=StringType constraints+=StringValidators*;
@@ -56,11 +68,7 @@ NumericFieldType:
 
 	//Numeric Types Rule
 NumericTypes:
-	INTEGER
-	| LONG
-	| BIG_DECIMAL
-	| FLOAT
-	| DOUBLE;
+	INTEGER | LONG | BIG_DECIMAL | FLOAT | DOUBLE;
 
 	//Boolean Field Type Token
 BooleanFieldType:
@@ -72,9 +80,7 @@ DateFieldType:
 
 	//Date Types Rule
 DateTypes:
-	LOCAL_DATE
-	| ZONED_DATETIME
-	| INSTANT;
+	LOCAL_DATE | ZONED_DATETIME | INSTANT;
 
 	//Blob Field Type Rule
 BlobFieldType:
@@ -82,30 +88,20 @@ BlobFieldType:
 
 	//Blob Types Rule
 BlobTypes:
-	BLOB
-	| ANY_BLOB
-	| IMAGE_BLOB
-	| TEXT_BLOB;
+	BLOB | ANY_BLOB | IMAGE_BLOB | TEXT_BLOB;
 
 	/* =========================================================================
  * VALIDATOR
  * ========================================================================= 
  */
 StringValidators:
-	required=RequiredValidator
-	| minLenght=MinValidator
-	| maxLenght=MaxValidator
-	| pattern=PatternValidator;
+	required=RequiredValidator | minLenght=MinValidator | maxLenght=MaxValidator | pattern=PatternValidator;
 
 NumericValidators:
-	required=RequiredValidator
-	| minValue=MinValidator
-	| maxValue=MaxValidator;
+	required=RequiredValidator | minValue=MinValidator | maxValue=MaxValidator;
 
 BlobValidators:
-	required=RequiredValidator
-	| minBytesValue=MinValidator
-	| maxBytesValue=MaxValidator;
+	required=RequiredValidator | minBytesValue=MinValidator | maxBytesValue=MaxValidator;
 
 RequiredValidator:
 	REQUIRED;
@@ -123,15 +119,10 @@ CoreEntity:
 	CORE_USER;
 
 Cardinality:
-	ONE_TO_MANY
-	| MANY_TO_ONE
-	| ONE_TO_ONE
-	| MANY_TO_MANY;
+	ONE_TO_MANY | MANY_TO_ONE | ONE_TO_ONE | MANY_TO_MANY;
 
 UserCardinality:
-	MANY_TO_ONE
-	| ONE_TO_ONE
-	| MANY_TO_MANY;
+	MANY_TO_ONE | ONE_TO_ONE | MANY_TO_MANY;
 
 	//Terminals
 terminal ENTITY_KEYWORD:
@@ -268,3 +259,15 @@ terminal REQUIRED:
 
 terminal PATTERN:
 	'pattern';
+
+terminal VIEWS_SECTION:
+	'views';
+
+terminal AS:
+	'as';
+
+terminal SHEET:
+	'Sheet';
+
+terminal PAGE:
+	'Page';

@@ -41,6 +41,7 @@ class KukulkanParsingTest {
 			    desc : TextBlob,
 			    instante : Instant
 			}
+			views{}
 		''')
 		val entity = model.entities.head
 		println(validationTestHelper.validate(model));

@@ -8,6 +8,7 @@
       fileExtensions="3k,kukulkan" ecorePackage="Kukulkan.ecore#/">
     <genClasses ecoreClass="Kukulkan.ecore#//DomainModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//DomainModel/entities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//DomainModel/viewSection"/>
     </genClasses>
     <genClasses ecoreClass="Kukulkan.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//Entity/name"/>
@@ -30,6 +31,13 @@
     <genClasses ecoreClass="Kukulkan.ecore#//CoreEntityAssociationField">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//CoreEntityAssociationField/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//CoreEntityAssociationField/targetEntity"/>
+    </genClasses>
+    <genClasses ecoreClass="Kukulkan.ecore#//ViewSection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//ViewSection/viewDeclarations"/>
+    </genClasses>
+    <genClasses ecoreClass="Kukulkan.ecore#//ViewDeclaration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//ViewDeclaration/entity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//ViewDeclaration/viewType"/>
     </genClasses>
     <genClasses ecoreClass="Kukulkan.ecore#//StringFieldType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//StringFieldType/name"/>
