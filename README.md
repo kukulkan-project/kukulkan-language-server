@@ -40,7 +40,7 @@ Look at the following example:
     - ImageBlob
 
 ### Kukulkan Language Server
-The Kukulkan Language Server is used in [Kukulkan IDE](https://github.com/robertovillarejo/kukulkan-ide-electron) for parsing and validating.
+The Kukulkan Language Server is used for the [VS Code Kukulkan extension](https://github.com/kukulkan-project/kukulkan-vscode-extension) for parsing and validating.
 
 #### Validation
 The language server provides some basic validations:
