@@ -43,6 +43,9 @@ AssociationField:
 CoreEntityAssociationField:
 	type=UserCardinality id=ID SEMICOLON targetEntity=CoreEntity;
 
+	/**
+ * VIEWS
+ */
 ViewSection:
 	VIEWS_SECTION LBRACE
 	(viewDeclarations+=ViewDeclaration
@@ -54,6 +57,15 @@ ViewDeclaration:
 
 ViewType:
 	SHEET | PAGE;
+
+	/**
+ * AUDITABLES
+ */
+AuditableSection:
+	AUDITABLE_SECTION LBRACE
+	(auditableEntities+=[Entity]
+	(COMMA auditableEntities+=[Entity])*)?
+	RBRACE;
 
 	//String Field Type Rule
 StringFieldType:
@@ -272,3 +284,6 @@ terminal SHEET:
 
 terminal PAGE:
 	'Page';
+
+terminal AUDITABLE_SECTION:
+	'auditable';

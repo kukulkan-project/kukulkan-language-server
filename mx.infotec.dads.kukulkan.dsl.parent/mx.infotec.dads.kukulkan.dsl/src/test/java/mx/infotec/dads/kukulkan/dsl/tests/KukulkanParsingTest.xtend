@@ -48,6 +48,9 @@ class KukulkanParsingTest {
 				Persona as Sheet,
 				Direccion as Page
 			}
+			auditable {
+				Persona
+			}
 		''')
 		val entity = model.entities.head
 		println(validationTestHelper.validate(model));
