@@ -22,7 +22,7 @@ subprojects {
 	apply plugin: 'maven'
 	
 	group = 'mx.infotec.dads.kukulkan.dsl'
-	version = '0.2.0-RELEASE'
+	version = '0.2.1-RELEASE'
 	
 	sourceCompatibility = '1.8'
 	targetCompatibility = '1.8'

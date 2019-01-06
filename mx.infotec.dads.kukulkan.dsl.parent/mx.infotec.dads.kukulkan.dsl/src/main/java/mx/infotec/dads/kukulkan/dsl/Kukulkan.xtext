@@ -8,7 +8,8 @@ generate kukulkan "http://www.infotec.mx/dads/kukulkan/dsl/Kukulkan"
  */
 DomainModel:
 	entities+=Entity+
-	(viewSection=ViewSection)?;
+	(viewSection=ViewSection)?
+	(auditableSection=AuditableSection)?;
 
 	//Entity Rule
 Entity:

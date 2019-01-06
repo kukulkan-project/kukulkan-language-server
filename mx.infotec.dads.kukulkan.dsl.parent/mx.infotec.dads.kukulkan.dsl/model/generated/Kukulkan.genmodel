@@ -9,6 +9,7 @@
     <genClasses ecoreClass="Kukulkan.ecore#//DomainModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//DomainModel/entities"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//DomainModel/viewSection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Kukulkan.ecore#//DomainModel/auditableSection"/>
     </genClasses>
     <genClasses ecoreClass="Kukulkan.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Kukulkan.ecore#//Entity/name"/>
